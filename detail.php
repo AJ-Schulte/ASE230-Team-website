@@ -1,8 +1,10 @@
 <?php
+include 'assets/functions/birthday.php';
 // INSERT DATA HERE.
 $members = [
 	[
 		"name"=> "AJ Schulte",
+		"birthday"=> "2005-09-12",
 		"role"=> "Video Game Developer",
 		"email"=> "ajschulte91@gmail.com",
 		"phoneNumber"=> "(859) 609-5647",
@@ -96,6 +98,7 @@ $members = [
 	],
 	[
 		"name"=> "Joseph Gallucci",
+		"birthday"=> "",
 		"role"=> "Software Engineer",
 		"email"=> "josephagallucci38@gmail.com",
 		"phoneNumber"=> "317-7785-1545",
@@ -163,6 +166,7 @@ $members = [
 	],
 	[
 		"name"=> "Riley Fitzgerald",
+		"birthday"=> "",
 		"role"=> "CyberSecurity Stuff",
 		"email"=> "Fitzgeralw1@mymail.nku.edu",
 		"phoneNumber"=> "513-111-7175",
@@ -276,6 +280,7 @@ $members = [
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?= $members[$_GET['index']]['name'] ?></h1>
+								<div class="title mb-3"><?= "Age: " . calculateAge($members[$_GET['index']]['birthday']) ?></div>
 							    <div class="title mb-3"><?= $members[$_GET['index']]['role'] ?></div>
 							    <ul class="list-unstyled">
 								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i><?= $members[$_GET['index']]['email'] ?></a></li>
