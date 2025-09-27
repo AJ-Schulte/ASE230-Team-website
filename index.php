@@ -1,16 +1,20 @@
 <?php
+include 'assets/functions/birthday.php';
 // INSERT DATA HERE.
 	$members = [
 		[
 			"name" => "AJ Schulte",
+			"birthday"=> "2005-09-12",
 			"role" => "Video Game Developer"
 		],
 		[
 			"name"=> "Joseph Gallucci",
+			"birthday"=> "",
 			"role"=> "Software Developer"
 		],
 		[
 			"name"=> "Riley Fitzgerald",
+			"birthday"=> "",
 			"role"=> "Cyber Security Major"
 		]
 	];
@@ -54,6 +58,7 @@
 					    <div class="row p-4 justify-content-center justify-content-md-between">
 						    <div class="primary-info col-auto">
 							    <h1 class="name mt-0 mb-1 text-white text-uppercase text-uppercase"><?= $members[$i]["name"]?></h1>
+								<div class="title mb-3"><?= "Age: " . calculateAge($members[$i]['birthday']) ?></div>
 							    <div class="title mb-3"><?= $members[$i]["role"] ?></div>
 								<a href="detail.php?index=<?= $i ?>" class="btn btn-secondary">See full profile</a>
 						    </div><!--//primary-info-->
