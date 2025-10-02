@@ -1,5 +1,6 @@
 <?php
 include 'assets/functions/birthday.php';
+include 'assets/functions/displayExperience.php';
 // INSERT DATA HERE.
 $members = [
 	[
@@ -202,6 +203,9 @@ $members = [
 			"Python",
 			"HTML",
 			"Java",
+		],
+		"others"=> [
+			"Microsoft Office",
 			"Github"
 		],
 		"education"=> [
@@ -218,12 +222,15 @@ $members = [
 		],
 		"awards"=> [
 			[
-				"awardName"=> "Xerox Innovation Aware",
-				"awardDesc"=> "given by the university of Rochester for students interested in IT"
+				"awardName"=> "Xerox Innovation Award",
+				"awardDesc"=> "Given by the University of Rochester for students interested in IT"
 			]
 		],
 		"languages"=> [
-			"English"
+			[
+				"language" => "English",
+				"proficiency" => "Native"
+			]
 		],
 		"interests"=> [
 			"Game modding",
@@ -232,9 +239,9 @@ $members = [
 		],
 		"projects"=> [
 			[
-				"projectName"=> "N/a",
-				"projectDesc"=> "N/a",
-				"projectLink"=> "N/a",
+				"projectName"=> "TicTacToe",
+				"projectDesc"=> "poorly implemented tictactoe game",
+				"projectLink"=> "https://github.com/RFitz2k/Practice/tree/main/TicTacToe",
 				"projectImage"=> ""
 			]
 		]
@@ -315,24 +322,9 @@ $members = [
 						    <div class="resume-section-content">
 							    <div class="resume-timeline position-relative">
 								    <article class="resume-timeline-item position-relative pb-5">
-									    <?php for($i=0;$i<count($members[$_GET['index']]['workExperience']); $i++) { ?>
-									    <div class="resume-timeline-item-header mb-2">
-										    <div class="d-flex flex-column flex-md-row">
-										        <h3 class="resume-position-title font-weight-bold mb-1"><?= $members[$_GET['index']]['workExperience'][$i]['positionName'] ?></h3>
-										        <div class="resume-company-name ms-auto"><?= $members[$_GET['index']]['workExperience'][$i]['companyName'] ?></div>
-										    </div><!--//row-->
-										    <div class="resume-position-time"><?= $members[$_GET['index']]['workExperience'][$i]['time'] ?></div>
-									    </div><!--//resume-timeline-item-header-->
-									    <div class="resume-timeline-item-desc">
-										    <p><?= $members[$_GET['index']]['workExperience'][$i]['role-description'] ?></p>
-										    <h4 class="resume-timeline-item-desc-heading font-weight-bold">Technologies used:</h4>
-										    <ul class="list-inline">
-												<?php for($j=0;$j<count($members[$_GET['index']]['workExperience'][$i]['techUsed']); $j++) { ?>
-											    <li class="list-inline-item"><span class="badge bg-secondary badge-pill"><?= $members[$_GET['index']]['workExperience'][$i]['techUsed'][$j] ?></span></li>
-												<?php } ?>
-										    </ul>
-									    </div><!--//resume-timeline-item-desc-->
-										<?php } ?>
+									    <?php foreach($members[$_GET['index']]['workExperience'] as $experience) {
+												displayExperience($experience);
+										} ?>
 								    </article><!--//resume-timeline-item-->
 							    </div><!--//resume-timeline-->
 						    </div>
@@ -351,7 +343,9 @@ $members = [
 											    <div class="progress-bar theme-progress-bar-dark" role="progressbar" style="width: 98%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
 											</div>
 								        </li>
+										
 										<?php }?>
+
 							        </ul>
 						        </div><!--//resume-skill-item-->
 						        <div class="resume-skill-item">
