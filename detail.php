@@ -1,5 +1,6 @@
 <?php
 include 'assets/functions/birthday.php';
+include 'assets/functions/cardindex.php';
 // INSERT DATA HERE.
 $members = [
 	[
@@ -98,7 +99,7 @@ $members = [
 	],
 	[
 		"name"=> "Joseph Gallucci",
-		"birthday"=> "",
+		"birthday"=> "2005-03-08",
 		"role"=> "Software Engineer",
 		"email"=> "josephagallucci38@gmail.com",
 		"phoneNumber"=> "317-7785-1545",

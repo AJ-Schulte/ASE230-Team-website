@@ -1,21 +1,34 @@
 <?php
 include 'assets/functions/birthday.php';
+include 'assets/functions/cardindex.php';
 // INSERT DATA HERE.
 	$members = [
 		[
 			"name" => "AJ Schulte",
 			"birthday"=> "2005-09-12",
-			"role" => "Video Game Developer"
+			"role" => "Video Game Developer",
+			"email"=> "ajschulte91@gmail.com",
+			"phoneNumber"=> "(859) 609-5647",
+			"linkedIn"=> "aj-schulte",
+			"github"=> "AJ-Schulte"
 		],
 		[
 			"name"=> "Joseph Gallucci",
-			"birthday"=> "",
-			"role"=> "Software Developer"
+			"birthday"=> "2005-03-08",
+			"role"=> "Software Developer",
+			"email" => "josephagallucci38@gmail.com",
+			"phoneNumber" => "317-775-1545",
+			"linkedIn"=> "joseph-a-gallucci",
+			"github"=> "josephagallucci",
 		],
 		[
 			"name"=> "Riley Fitzgerald",
 			"birthday"=> "",
-			"role"=> "Cyber Security Major"
+			"role"=> "Cyber Security Major",
+			"email"=> "Fitzgeralw1@mymail.nku.edu",
+			"phoneNumber"=> "513-111-7175",
+			"linkedIn"=> "riley-fitzgerald",
+			"github"=> "Rfitz2k",
 		]
 	];
 ?>
@@ -63,6 +76,11 @@ include 'assets/functions/birthday.php';
 								<a href="detail.php?index=<?= $i ?>" class="btn btn-secondary">See full profile</a>
 						    </div><!--//primary-info-->
 						    <div class="secondary-info col-auto mt-2">
+								<?= cardInfo($members[$i])?>
+							<!--<ul class="list-unstyled">
+								    <li class="mb-2"><a class="text-link" href="#"><i class="far fa-envelope fa-fw me-2" data-fa-transform="grow-3"></i></a><?=cardInfo($members[$i])?></li>
+								    <li><a class="text-link" href="#"><i class="fas fa-mobile-alt fa-fw me-2" data-fa-transform="grow-6"></i></a><?=cardInfo($members[$i])?></li>
+							    </ul>-->
 						    </div><!--//secondary-info-->
 					    </div><!--//row-->
 					    
